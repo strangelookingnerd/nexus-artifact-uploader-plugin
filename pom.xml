@@ -16,7 +16,9 @@
     <properties>
         <revision>2.15</revision>
         <changelist>-SNAPSHOT</changelist>
-        <jenkins.version>2.319.3</jenkins.version>
+        <!-- https://www.jenkins.io/doc/developer/plugin-development/choosing-jenkins-baseline/ -->
+        <jenkins.baseline>2.319</jenkins.baseline>
+        <jenkins.version>${jenkins.baseline}.3</jenkins.version>
         <gitHubRepo>jenkinsci/${project.artifactId}-plugin</gitHubRepo>
         <maven.version>3.8.6</maven.version>
         <wagon.version>3.5.2</wagon.version>
@@ -62,7 +64,7 @@
         <dependencies>
             <dependency>
                 <groupId>io.jenkins.tools.bom</groupId>
-                <artifactId>bom-2.319.x</artifactId>
+                <artifactId>bom-${jenkins.baseline}.x</artifactId>
                 <version>1654.vcb_69d035fa_20</version>
                 <type>pom</type>
                 <scope>import</scope>
